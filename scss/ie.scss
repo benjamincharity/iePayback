@@ -1,0 +1,12 @@
+//Don't add anything to this stylesheet if you need to target ie do the following:
+// @if $ie { 
+//   //do ie thing 
+// } @else {
+//  //do non-ie thing
+// }
+$ie : true;
+
+
+html {
+  border: 1px solid red;
+}
