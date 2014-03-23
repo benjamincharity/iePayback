@@ -1,0 +1,27 @@
+
+$white: #fafafa;
+$green1: #27ae60;
+$green2: #26A65B;
+$mid-green: #229652;
+$green4: #1E8549;
+$green5: #27ae60;
+$dark-green: #176437;
+$green7: #13532E;
+$teal  : #52CF86;
+
+
+%inputStyle {
+  background: transparent;
+  border: 4px solid $dark-green;
+  color: $dark-green;
+  display: block;
+  @include rem('font-size',28px);
+  font-weight: 600;
+  padding: .4em;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 0;
+  }
+}
+

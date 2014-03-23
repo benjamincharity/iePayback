@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="59px" height="60px" viewBox="0 0 59 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Imported Layers</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="iePayback" sketch:type="MSArtboardGroup" transform="translate(-446.000000, -642.000000)" stroke-width="2" stroke="#176437">
+            <g id="Form" sketch:type="MSLayerGroup" transform="translate(261.000000, 317.000000)">
+                <g id="versions" transform="translate(40.000000, 267.000000)" sketch:type="MSShapeGroup">
+                    <g transform="translate(0.000000, 46.000000)" id="Rectangle-6-copy-+-6">
+                        <g transform="translate(127.000000, 0.000000)">
+                            <g id="6" transform="translate(19.000000, 13.000000)">
+                                <g id="Imported-Layers">
+                                    <path d="M24.364,0 C20.014,0.767 17.108,4.917 17.875,9.268 C18.642,13.618 22.792,16.523 27.143,15.757 L24.364,0 L24.364,0 Z M30.25,45.987 L29.861,42.694 C29.67,41.606 30.396,40.568 31.483,40.377 L27.837,19.696 L19.959,21.085 C16.695,21.661 14.517,24.772 15.092,28.036 L16.858,38.469 C17.145,40.102 18.702,41.191 20.333,40.904 C21.964,40.616 23.054,39.06 22.766,37.427 L24.208,45.987 L30.25,45.987 Z M25.416,52.029 L26.036,55.553 C26.324,57.185 27.881,58.274 29.512,57.987 C31.143,57.699 32.233,56.144 31.945,54.511 L31.5,51.988 L25.416,52.029 Z M21.57,30.641 L22.791,37.487 L21.57,30.641 Z M44.658,0 C49.01,0.768 51.915,4.918 51.148,9.269 C50.381,13.619 46.231,16.524 41.881,15.757 L44.658,0 L44.658,0 Z M41.185,19.696 L49.064,21.086 C52.328,21.661 54.507,24.773 53.932,28.037 L52.242,38.613 C51.955,40.246 50.398,41.334 48.767,41.046 C47.136,40.759 46.044,39.204 46.333,37.571 L42.986,55.554 C42.699,57.186 41.143,58.275 39.512,57.987 C37.881,57.7 36.79,56.145 37.078,54.512 L39.162,42.694 C39.353,41.606 38.627,40.569 37.539,40.377 L41.185,19.696 L41.185,19.696 Z M47.537,30.6 L46.291,37.696 L47.537,30.6 Z" id="Stroke-1" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M45,46 L57,46 C57,48 55.209,52 53,52 L44,52 M38,52 L1,52 C-0.105,52 -0.105,46 1,46 L39,46" id="Stroke-2" stroke-linejoin="round"></path>
+                                    <path d="M17,44 L17,56" id="Stroke-3" stroke-linecap="round"></path>
+                                    <path d="M13,46 L13,52 M9,46 L9,52 M5,46 L5,52" id="Stroke-4" stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

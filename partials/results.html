@@ -2,7 +2,8 @@
 
 <ul>
   <li data-ng-repeat="post in posts">
-    <div>By: {{ post.name }}</div>
-    <div>Message: {{ post.message }}</div>
+    <div>By: {{ post.name }} {{post.lastInitial}}.</div>
+    <div>Years: {{ post.years }}</div>
+    <div>Version: {{ post.ieVersions }}</div>
   </li>
 </ul>

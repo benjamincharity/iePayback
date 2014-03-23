@@ -1,9 +1,136 @@
-<h2>The Form</h2>
+<form novalidate class="newPost">
 
-<form novalidate class="simple-form">
-  Name: <input type="text" ng-model="newPostForm.name" />
-  <br>
-  Message: <input type="text" ng-model="newPostForm.message" />
-  <br>
-  <button ng-click="submit(newPostForm)">Submit</button>
+  <div class="newPost__group">
+    <label class="newPost__label">First Name</label>
+    <input
+      type="text"
+      data-ng-model="newPostForm.name"
+      class="newPost__input" />
+  </div>
+
+
+  <div class="newPost__group--inline">
+    <label class="newPost__label">Last Initial</label>
+    <select
+      data-ng-model="newPostForm.lastInitial"
+      selecter
+      label="foo"
+    >
+      <option value="{{ letter }}" data-ng-repeat="letter in alphabet">{{ letter }}</option>
+    </select>
+  </div>
+
+
+  <div class="newPost__group--inline">
+    <label class="newPost__label">Years Spent In Suffering</label>
+    <select
+      data-ng-model="newPostForm.years"
+      selecter
+      label="bar"
+    >
+    <option
+      value="{{ year }}"
+      data-ng-repeat="year in [] | createRange:yearsSinceRelease"
+    >
+      {{ year | fixedNumberLength:2 }}
+      </option>
+    </select>
+  </div>
+
+
+  <div class="newPost__group">
+    <p class="newPost__label">Versions subjected to</p>
+
+    <ul class="newPost__versions">
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie5"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE5" />
+
+        <label class="newPost__version-label rotating-dashed" for="ie5">5</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie6"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE6" />
+
+        <label class="newPost__version-label" for="ie6">6</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie7"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE7" />
+
+        <label class="newPost__version-label" for="ie7">7</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie8"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE8" />
+
+        <label class="newPost__version-label" for="ie8">8</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie9"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE9" />
+
+        <label class="newPost__version-label" for="ie9">9</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie10"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE10" />
+
+        <label class="newPost__version-label" for="ie10">10</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ie11"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IE11" />
+
+        <label class="newPost__version-label" for="ie11">11</label>
+      </li>
+
+      <li class="newPost__version">
+        <input
+          class="newPost__version-checkbox"
+          id="ieCompat"
+          type="checkbox"
+          data-ng-model="newPostForm.ieVersions.IECompat" />
+
+        <label class="newPost__version-label" for="ieCompatability">Compatability Mode</label>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="newPost__group  center">
+    <button class="newPost__submit" ng-click="submit(newPostForm)">Submit</button>
+
+    <div>
+      <a class="newPost__skip" ui-sref="results">Just show me the results.</a>
+    </div>
+  </div>
 </form>

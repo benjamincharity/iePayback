@@ -1,16 +1,215 @@
 $ie : false !default;
-@import 'compass/reset';
+@import 'reset';
+@import 'functions';
 @import 'compass/support';
 @import 'compass';
 
 
+@import 'extends';
+
+@import 'selecter';
+
+
 html {
-	font-family: sans-serif;
-  height: 100%;
-  width: 100%;
+  background: $teal;
+  color: $dark-green;
+  font-family: "proxima-nova",sans-serif;
+  @include rem('font-size',14px);
+  font-weight: 600;
+  padding: 2em;
+  text-transform: uppercase;
+}
+
+body {
+
+}
+
+.center {
+  text-align: center;
 }
 
 header {
-  height: 60px;
-  line-height: 60px;
+  margin-bottom: 4em;
+
+  //a {
+    //display: inline-block;
+  //}
 }
+
+// <h1> primary site title
+.title {
+  background-image: url('/images/title.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 0;
+  overflow: hidden;
+  padding-top: 10%;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// <div> main container
+.container {
+  background: $mid-green;
+  border: 2px solid $dark-green;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+// contains one form row
+.newPost__group {
+  margin-bottom: 1em;
+}
+
+// contains a half row
+.newPost__group--inline {
+  display: inline-block;
+  width: 49%;
+
+  &:first-child {
+    margin-right: 1%;
+  }
+
+  .selecter {
+    max-width: 100px;
+  }
+}
+
+.newPost__label {
+
+  &::after {
+    content: ":";
+  }
+}
+
+// <input> normal text inputs
+.newPost__input {
+  @extend %inputStyle;
+  height: 52px;
+  width: 100%;
+}
+
+.newPost__versions {
+  @include clear;
+}
+
+.newPost__version {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  width: 25%;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 120%;
+  }
+}
+
+$spacing: 6px;
+
+
+.newPost__version-label {
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+  border: 2px dashed lighten($dark-green, 20%);
+  border-radius: 4px;
+  @include rem('font-size',40px);
+  padding-top: 64%;
+  position: absolute;
+  bottom : $spacing;
+  left   : $spacing;
+  right  : $spacing;
+  top    : $spacing;
+  text-align: center;
+  @include customTransition();
+
+  &[for=ie5] {
+    background-image: url('/images/ie5.svg');
+  }
+
+  &[for=ie6] {
+    background-image: url('/images/ie6.svg');
+  }
+
+  &[for=ie7] {
+    background-image: url('/images/ie7.svg');
+  }
+
+  &[for=ie8] {
+    background-image: url('/images/ie8.svg');
+  }
+
+  &[for=ie9] {
+    background-image: url('/images/ie9.svg');
+  }
+
+  &[for=ie10] {
+    background-image: url('/images/ie10.svg');
+  }
+
+  &[for=ie11] {
+    background-image: url('/images/ie11.svg');
+  }
+
+  &[for=ieCompatability] {
+    background-image: url('/images/ieCompatability.svg');
+    @include rem('font-size',16px);
+  }
+}
+
+// <input=checkbox>
+.newPost__version-checkbox {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 100%;
+
+  &:checked {
+    &+label {
+      //background-size: 60%;
+      border-color: $dark-green;
+    }
+  }
+}
+
+// <input=submit> form submit button
+.newPost__submit {
+  background-color: $teal;
+  border: none;
+  color: $dark-green;
+  @include rem('font-size',28px);
+  font-weight: 600;
+  padding: .6em 1.4em;
+  text-transform: uppercase;
+}
+
+// <a> skip post link
+.newPost__skip {
+  color: $dark-green;
+  display: inline-block;
+  @include rem('font-size',12px);
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: none;
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
