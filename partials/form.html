@@ -5,7 +5,9 @@
     <input
       type="text"
       data-ng-model="newPostForm.name"
-      class="newPost__input" />
+      class="newPost__input"
+      placeholder="e.g. Benjamin..."
+    />
   </div>
 
 
@@ -24,6 +26,7 @@
   <div class="newPost__group--inline">
     <label class="newPost__label">Years Spent In Suffering</label>
     <select
+      class="years"
       data-ng-model="newPostForm.years"
       selecter
       label="bar"
@@ -113,10 +116,10 @@
         <label class="newPost__version-label" for="ie11">11</label>
       </li>
 
-      <li class="newPost__version">
+      <li class="newPost__version  compatability">
         <input
           class="newPost__version-checkbox"
-          id="ieCompat"
+          id="ieCompatability"
           type="checkbox"
           data-ng-model="newPostForm.ieVersions.IECompat" />
 

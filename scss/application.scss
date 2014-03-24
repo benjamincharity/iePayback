@@ -10,6 +10,21 @@ $ie : false !default;
 @import 'selecter';
 
 
+$placeholderColor: darken($mid-green, 6%);
+
+::-webkit-input-placeholder {
+  color: $placeholderColor;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $placeholderColor;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $placeholderColor;
+}
+:-ms-input-placeholder {
+  color: $placeholderColor;
+}
+
 html {
   background: $teal;
   color: $dark-green;
@@ -30,10 +45,6 @@ body {
 
 header {
   margin-bottom: 4em;
-
-  //a {
-    //display: inline-block;
-  //}
 }
 
 // <h1> primary site title
@@ -52,7 +63,7 @@ header {
 // <div> main container
 .container {
   background: $mid-green;
-  border: 2px solid $dark-green;
+  border: 1px solid $dark-green;
   padding: 30px;
   margin: 0 auto;
   max-width: 540px;
@@ -78,6 +89,7 @@ header {
 }
 
 .newPost__label {
+  margin-bottom: 0;
 
   &::after {
     content: ":";
@@ -93,6 +105,8 @@ header {
 
 .newPost__versions {
   @include clear;
+  // pull it back to align the checkered border
+  margin-left: -6px;
 }
 
 .newPost__version {
@@ -109,8 +123,9 @@ header {
   }
 }
 
-$spacing: 6px;
 
+
+$spacing: 6px;
 
 .newPost__version-label {
   background-size: 60%;
@@ -158,7 +173,9 @@ $spacing: 6px;
 
   &[for=ieCompatability] {
     background-image: url('/images/ieCompatability.svg');
-    @include rem('font-size',16px);
+    @include rem('font-size',14px);
+    padding-top: 70%;
+    white-space: normal;
   }
 }
 
@@ -171,7 +188,6 @@ $spacing: 6px;
 
   &:checked {
     &+label {
-      //background-size: 60%;
       border-color: $dark-green;
     }
   }

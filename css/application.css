@@ -237,7 +237,7 @@ li {
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 600;
-  padding: .4em;
+  padding: .4em .4em .3em;
   text-transform: uppercase;
 }
 /* line 23, ../scss/_extends.scss */
@@ -261,33 +261,41 @@ li {
 
 /* line 13, ../scss/_selecter.scss */
 .selecter {
+  padding-top: .3em;
   display: block;
   position: relative;
   z-index: 1;
 }
 
-/* line 19, ../scss/_selecter.scss */
+/* line 20, ../scss/_selecter.scss */
 .selecter .selecter-selected {
   background: transparent url(/images/arrows.svg) no-repeat right center;
   color: #176437;
   cursor: pointer;
   display: block;
   line-height: 28px;
-  padding-top: 6px;
+  padding-right: 35px;
+  padding-top: 4px;
   margin: 0;
   min-height: 32px;
   overflow: hidden;
   position: relative;
+  text-align: right;
   text-overflow: clip;
   z-index: 49;
 }
 
-/* line 34, ../scss/_selecter.scss */
+/* line 40, ../scss/_selecter.scss */
+.selecter-element.years + .selecter .selecter-selected {
+  padding-right: 28px;
+}
+
+/* line 47, ../scss/_selecter.scss */
 .selecter .selecter-options {
   border: 1px solid #176437;
   border-width: 0 1px 1px;
   background-color: #229652;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   display: none;
   left: 0;
   margin: 0;
@@ -302,7 +310,7 @@ li {
   z-index: 50;
 }
 
-/* line 52, ../scss/_selecter.scss */
+/* line 65, ../scss/_selecter.scss */
 .selecter .selecter-group {
   border-bottom: 1px solid #176437;
   color: #176437;
@@ -312,7 +320,7 @@ li {
   text-transform: uppercase;
 }
 
-/* line 61, ../scss/_selecter.scss */
+/* line 73, ../scss/_selecter.scss */
 .selecter .selecter-item {
   border-bottom: 1px solid #176437;
   color: #176437;
@@ -321,6 +329,7 @@ li {
   margin: 0;
   overflow: hidden;
   padding: 8px 10px;
+  text-align: center;
   text-overflow: ellipsis;
   -webkit-transition: background-color 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: background-color 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -329,129 +338,129 @@ li {
   transition: background-color 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   width: 100%;
 }
-/* line 75, ../scss/_selecter.scss */
+/* line 86, ../scss/_selecter.scss */
 .selecter .selecter-item:focus, .selecter .selecter-item:hover {
-  background-color: #249e57;
+  background-color: #1f8549;
 }
 
-/* line 81, ../scss/_selecter.scss */
+/* line 92, ../scss/_selecter.scss */
 .selecter .selecter-item.disabled {
   color: #229652;
   cursor: default;
 }
 
-/* line 85, ../scss/_selecter.scss */
+/* line 96, ../scss/_selecter.scss */
 .selecter .selecter-item:first-child {
   border-radius: 0;
 }
 
-/* line 86, ../scss/_selecter.scss */
+/* line 97, ../scss/_selecter.scss */
 .selecter .selecter-item:last-child {
   border-radius: 0 0 2px 2px;
   border-bottom: 0;
 }
 
 @media screen and (min-width: 980px) {
-  /* line 91, ../scss/_selecter.scss */
+  /* line 102, ../scss/_selecter.scss */
   .selecter .selecter-item:hover,
   .selecter .selecter-item.selected:hover {
     background-color: #176437;
   }
 
-  /* line 93, ../scss/_selecter.scss */
+  /* line 104, ../scss/_selecter.scss */
   .selecter .selecter-item.disabled:hover {
     background-color: #229652;
   }
 
-  /* line 94, ../scss/_selecter.scss */
+  /* line 105, ../scss/_selecter.scss */
   .selecter:hover .selecter-selected {
     background-color: #229652;
   }
 
-  /* line 95, ../scss/_selecter.scss */
+  /* line 106, ../scss/_selecter.scss */
   .selecter.disabled .selecter-item:hover {
     background: #229652;
   }
 }
 /* Open */
-/* line 98, ../scss/_selecter.scss */
+/* line 109, ../scss/_selecter.scss */
 .selecter.open {
   z-index: 3;
 }
 
-/* line 99, ../scss/_selecter.scss */
+/* line 110, ../scss/_selecter.scss */
 .selecter.open .selecter-selected {
   border-radius: 3px 3px 0 0;
   z-index: 51;
 }
 
-/* line 103, ../scss/_selecter.scss */
+/* line 114, ../scss/_selecter.scss */
 .selecter.open .selecter-selected,
 .selecter.focus .selecter-selected {
   background-color: #229652;
 }
 
 /* 'Cover' Positioning */
-/* line 109, ../scss/_selecter.scss */
+/* line 120, ../scss/_selecter.scss */
 .selecter.cover .selecter-options {
   border-radius: 3px;
   border-width: 1px;
   top: 0;
 }
 
-/* line 114, ../scss/_selecter.scss */
+/* line 125, ../scss/_selecter.scss */
 .selecter.cover .selecter-options .selecter-item.first {
   border-radius: 3px 3px 0 0;
 }
 
-/* line 115, ../scss/_selecter.scss */
+/* line 126, ../scss/_selecter.scss */
 .selecter.cover.open .selecter-selected {
   border-radius: 3px 3px 0 0;
   z-index: 49;
 }
 
 /* 'Bottom' Positioning */
-/* line 120, ../scss/_selecter.scss */
+/* line 131, ../scss/_selecter.scss */
 .selecter.bottom .selecter-options {
   border-width: 1px 1px 0;
   bottom: 100%;
   top: auto;
 }
 
-/* line 125, ../scss/_selecter.scss */
+/* line 136, ../scss/_selecter.scss */
 .selecter.bottom .selecter-item:last-child {
   border: none;
 }
 
-/* line 126, ../scss/_selecter.scss */
+/* line 137, ../scss/_selecter.scss */
 .selecter.bottom.open .selecter-selected {
   border-radius: 0 0 3px 3px;
 }
 
-/* line 127, ../scss/_selecter.scss */
+/* line 138, ../scss/_selecter.scss */
 .selecter.bottom.open .selecter-options {
   border-radius: 3px 3px 0 0;
 }
 
 /* 'Bottom' + 'Cover' Positioning */
-/* line 129, ../scss/_selecter.scss */
+/* line 140, ../scss/_selecter.scss */
 .selecter.bottom.cover .selecter-options {
   bottom: 0;
   top: auto;
 }
 
-/* line 133, ../scss/_selecter.scss */
+/* line 144, ../scss/_selecter.scss */
 .selecter.bottom.cover.open .selecter-selected {
   border-radius: 3px;
 }
 
-/* line 134, ../scss/_selecter.scss */
+/* line 145, ../scss/_selecter.scss */
 .selecter.bottom.cover.open .selecter-options {
   border-radius: 3px;
 }
 
 /* Multiple Select */
-/* line 136, ../scss/_selecter.scss */
+/* line 147, ../scss/_selecter.scss */
 .selecter.multiple .selecter-options {
   border-radius: 3px;
   border-width: 1px;
@@ -462,7 +471,7 @@ li {
 }
 
 /* 'Disabled' State */
-/* line 145, ../scss/_selecter.scss */
+/* line 156, ../scss/_selecter.scss */
 .selecter.disabled .selecter-selected {
   background: #fff;
   border-color: #eee;
@@ -470,13 +479,13 @@ li {
   cursor: default;
 }
 
-/* line 151, ../scss/_selecter.scss */
+/* line 162, ../scss/_selecter.scss */
 .selecter.disabled .selecter-options {
   background: #fff;
   border-color: #eee;
 }
 
-/* line 155, ../scss/_selecter.scss */
+/* line 166, ../scss/_selecter.scss */
 .selecter.disabled .selecter-group,
 .selecter.disabled .selecter-item {
   border-color: #eee;
@@ -484,18 +493,18 @@ li {
   cursor: default;
 }
 
-/* line 161, ../scss/_selecter.scss */
+/* line 172, ../scss/_selecter.scss */
 .selecter.disabled .selecter-item.selected {
   background: #fafafa;
 }
 
 /* Scroller Support */
-/* line 163, ../scss/_selecter.scss */
+/* line 174, ../scss/_selecter.scss */
 .selecter .selecter-options.scroller {
   overflow: hidden;
 }
 
-/* line 164, ../scss/_selecter.scss */
+/* line 175, ../scss/_selecter.scss */
 .selecter .selecter-options.scroller .scroller-content {
   max-height: 260px;
   padding: 0;
@@ -503,18 +512,40 @@ li {
 
 /* Media Queries */
 @media screen and (max-width: 740px) {
-  /* line 170, ../scss/_selecter.scss */
+  /* line 181, ../scss/_selecter.scss */
   .selecter {
     max-width: 40%;
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 173, ../scss/_selecter.scss */
+  /* line 184, ../scss/_selecter.scss */
   .selecter {
     max-width: 100%;
   }
 }
-/* line 13, ../scss/application.scss */
+/* line 15, ../scss/application.scss */
+::-webkit-input-placeholder {
+  color: #1c7d44;
+}
+
+/* line 18, ../scss/application.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #1c7d44;
+}
+
+/* line 21, ../scss/application.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #1c7d44;
+}
+
+/* line 24, ../scss/application.scss */
+:-ms-input-placeholder {
+  color: #1c7d44;
+}
+
+/* line 28, ../scss/application.scss */
 html {
   background: #52cf86;
   color: #176437;
@@ -526,17 +557,17 @@ html {
   text-transform: uppercase;
 }
 
-/* line 27, ../scss/application.scss */
+/* line 42, ../scss/application.scss */
 .center {
   text-align: center;
 }
 
-/* line 31, ../scss/application.scss */
+/* line 46, ../scss/application.scss */
 header {
   margin-bottom: 4em;
 }
 
-/* line 40, ../scss/application.scss */
+/* line 51, ../scss/application.scss */
 .title {
   background-image: url("/images/title.svg");
   background-position: center;
@@ -549,45 +580,53 @@ header {
   white-space: nowrap;
 }
 
-/* line 53, ../scss/application.scss */
+/* line 64, ../scss/application.scss */
 .container {
   background: #229652;
-  border: 2px solid #176437;
+  border: 1px solid #176437;
   padding: 30px;
   margin: 0 auto;
   max-width: 540px;
 }
 
-/* line 62, ../scss/application.scss */
+/* line 73, ../scss/application.scss */
 .newPost__group {
   margin-bottom: 1em;
 }
 
-/* line 67, ../scss/application.scss */
+/* line 78, ../scss/application.scss */
 .newPost__group--inline {
   display: inline-block;
   width: 49%;
 }
-/* line 71, ../scss/application.scss */
+/* line 82, ../scss/application.scss */
 .newPost__group--inline:first-child {
   margin-right: 1%;
 }
-/* line 75, ../scss/application.scss */
+/* line 86, ../scss/application.scss */
 .newPost__group--inline .selecter {
   max-width: 100px;
 }
 
-/* line 82, ../scss/application.scss */
+/* line 91, ../scss/application.scss */
+.newPost__label {
+  margin-bottom: 0;
+}
+/* line 94, ../scss/application.scss */
 .newPost__label::after {
   content: ":";
 }
 
-/* line 88, ../scss/application.scss */
+/* line 100, ../scss/application.scss */
 .newPost__input {
   height: 52px;
   width: 100%;
 }
 
+/* line 106, ../scss/application.scss */
+.newPost__versions {
+  margin-left: -6px;
+}
 /* line 84, ../scss/_functions.scss */
 .newPost__versions::after {
   clear: both;
@@ -595,7 +634,7 @@ header {
   display: table;
 }
 
-/* line 98, ../scss/application.scss */
+/* line 112, ../scss/application.scss */
 .newPost__version {
   float: left;
   overflow: hidden;
@@ -603,14 +642,14 @@ header {
   white-space: nowrap;
   width: 25%;
 }
-/* line 105, ../scss/application.scss */
+/* line 119, ../scss/application.scss */
 .newPost__version::before {
   content: "";
   display: block;
   padding-top: 120%;
 }
 
-/* line 115, ../scss/application.scss */
+/* line 130, ../scss/application.scss */
 .newPost__version-label {
   background-size: 60%;
   background-repeat: no-repeat;
@@ -632,54 +671,56 @@ header {
   -o-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
-/* line 131, ../scss/application.scss */
+/* line 146, ../scss/application.scss */
 .newPost__version-label[for=ie5] {
   background-image: url("/images/ie5.svg");
 }
-/* line 135, ../scss/application.scss */
+/* line 150, ../scss/application.scss */
 .newPost__version-label[for=ie6] {
   background-image: url("/images/ie6.svg");
 }
-/* line 139, ../scss/application.scss */
+/* line 154, ../scss/application.scss */
 .newPost__version-label[for=ie7] {
   background-image: url("/images/ie7.svg");
 }
-/* line 143, ../scss/application.scss */
+/* line 158, ../scss/application.scss */
 .newPost__version-label[for=ie8] {
   background-image: url("/images/ie8.svg");
 }
-/* line 147, ../scss/application.scss */
+/* line 162, ../scss/application.scss */
 .newPost__version-label[for=ie9] {
   background-image: url("/images/ie9.svg");
 }
-/* line 151, ../scss/application.scss */
+/* line 166, ../scss/application.scss */
 .newPost__version-label[for=ie10] {
   background-image: url("/images/ie10.svg");
 }
-/* line 155, ../scss/application.scss */
+/* line 170, ../scss/application.scss */
 .newPost__version-label[for=ie11] {
   background-image: url("/images/ie11.svg");
 }
-/* line 159, ../scss/application.scss */
+/* line 174, ../scss/application.scss */
 .newPost__version-label[for=ieCompatability] {
   background-image: url("/images/ieCompatability.svg");
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding-top: 70%;
+  white-space: normal;
 }
 
-/* line 166, ../scss/application.scss */
+/* line 183, ../scss/application.scss */
 .newPost__version-checkbox {
   opacity: 0;
   pointer-events: none;
   position: absolute;
   right: 100%;
 }
-/* line 173, ../scss/application.scss */
+/* line 190, ../scss/application.scss */
 .newPost__version-checkbox:checked + label {
   border-color: #176437;
 }
 
-/* line 181, ../scss/application.scss */
+/* line 197, ../scss/application.scss */
 .newPost__submit {
   background-color: #52cf86;
   border: none;
@@ -691,7 +732,7 @@ header {
   text-transform: uppercase;
 }
 
-/* line 192, ../scss/application.scss */
+/* line 208, ../scss/application.scss */
 .newPost__skip {
   color: #176437;
   display: inline-block;

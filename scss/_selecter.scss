@@ -12,6 +12,7 @@
 }
 .selecter {
   @extend %inputStyle;
+  padding-top: .3em;
   display: block;
   position: relative;
   z-index: 1;
@@ -22,20 +23,32 @@
   cursor: pointer;
   display: block;
   line-height: 28px;
-  padding-top: 6px;
+  padding-right: 35px;
+  padding-top: 4px;
   margin: 0;
   min-height: 32px;
   overflow: hidden;
-  //padding: 8px 10px;
   position: relative;
+  text-align: right;
   text-overflow: clip;
   z-index: 49;
 }
+
+.selecter-element {
+  &.years {
+    &+.selecter {
+      .selecter-selected {
+        padding-right: 28px;
+      }
+    }
+  }
+}
+
 .selecter .selecter-options {
   border: 1px solid $dark-green;
   border-width: 0 1px 1px;
   background-color: $mid-green;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   display: none;
   left: 0;
   margin: 0;
@@ -50,7 +63,6 @@
   z-index: 50;
        }
        .selecter .selecter-group {
-         //background: #F9F9F9;
          border-bottom: 1px solid $dark-green;
          color: $dark-green;
          display: block;
@@ -59,22 +71,21 @@
          text-transform: uppercase;
        }
        .selecter .selecter-item {
-         //background: #fff;
          border-bottom: 1px solid $dark-green;
          color: $dark-green;
          cursor: pointer;
          display: block;
-         //font-size: 13px;
          margin: 0;
          overflow: hidden;
          padding: 8px 10px;
+         text-align: center;
          text-overflow: ellipsis;
          @include customTransition(background-color);
          width: 100%;
 
          &:focus,
          &:hover {
-           background-color: lighten($dark-green, 14%);
+           background-color: lighten($dark-green, 8%);
          }
        }
        //.selecter .selecter-item.selected { background: #F9F9F9 }

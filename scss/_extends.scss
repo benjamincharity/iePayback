@@ -1,12 +1,12 @@
 
 $white: #fafafa;
-$green1: #27ae60;
-$green2: #26A65B;
+//$green1: #27ae60;
+//$green2: #26A65B;
 $mid-green: #229652;
-$green4: #1E8549;
-$green5: #27ae60;
+//$green4: #1E8549;
+//$green5: #27ae60;
 $dark-green: #176437;
-$green7: #13532E;
+//$green7: #13532E;
 $teal  : #52CF86;
 
 
@@ -17,7 +17,7 @@ $teal  : #52CF86;
   display: block;
   @include rem('font-size',28px);
   font-weight: 600;
-  padding: .4em;
+  padding: .4em .4em .3em;
   text-transform: uppercase;
 
   &:focus {
