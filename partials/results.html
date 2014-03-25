@@ -1,9 +1,16 @@
 <h2>The Results</h2>
 
 <ul>
-  <li data-ng-repeat="post in posts">
-    <div>By: {{ post.name }} {{post.lastInitial}}.</div>
-    <div>Years: {{ post.years }}</div>
-    <div>Version: {{ post.ieVersions }}</div>
+  <li data-ng-repeat="post in posts" style="margin-bottom: 1em;">
+
+    <ul>
+      <li>Name: {{ post.name }}</li>
+      <li>Initial: {{ post.lastInitial }}</li>
+      <li>Years: {{ post.years }}</li>
+      <li>Versions: {{ post.ieVersions }}</li>
+      <li>Rate: {{ post.rate }}</li>
+      <li>Message: {{ post.message }}</li>
+    </ul>
+
   </li>
 </ul>

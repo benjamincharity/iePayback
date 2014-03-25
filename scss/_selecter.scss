@@ -16,14 +16,20 @@
   display: block;
   position: relative;
   z-index: 1;
+
+  &.focus {
+    background-color: $teal;
+  }
 }
 .selecter .selecter-selected {
-  background: transparent url(/images/arrows.svg) no-repeat right center;
+  background-image: url(/images/arrows.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
   color: $dark-green;
   cursor: pointer;
   display: block;
   line-height: 28px;
-  padding-right: 35px;
+  padding-right: 39px;
   padding-top: 4px;
   margin: 0;
   min-height: 32px;
@@ -32,13 +38,19 @@
   text-align: right;
   text-overflow: clip;
   z-index: 49;
+
+  &.placeholder {
+    color: $placeholderColor;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
 }
 
 .selecter-element {
   &.years {
     &+.selecter {
       .selecter-selected {
-        padding-right: 28px;
+        padding-right: 36px;
       }
     }
   }
@@ -85,7 +97,7 @@
 
          &:focus,
          &:hover {
-           background-color: lighten($dark-green, 8%);
+           background-color: $teal;
          }
        }
        //.selecter .selecter-item.selected { background: #F9F9F9 }
@@ -98,23 +110,23 @@
          border-radius: 0 0 2px 2px;
          border-bottom: 0;
        }
-       @media screen and (min-width: 980px) { 
-         .selecter .selecter-item:hover,
-         .selecter .selecter-item.selected:hover { background-color: darken($mid-green, 12%) }
-         .selecter .selecter-item.disabled:hover { background-color: $mid-green }
-         .selecter:hover .selecter-selected { background-color: $mid-green }
-         .selecter.disabled .selecter-item:hover { background: $mid-green }
-       }
+       //@media screen and (min-width: 980px) { 
+         //.selecter .selecter-item:hover,
+         //.selecter .selecter-item.selected:hover { background-color: darken($mid-green, 12%) }
+         //.selecter .selecter-item.disabled:hover { background-color: $mid-green }
+         //.selecter:hover .selecter-selected { background-color: $mid-green }
+         //.selecter.disabled .selecter-item:hover { background: $mid-green }
+       //}
        /* Open */
-       .selecter.open { z-index: 3 }
+       .selecter.open {
+        z-index: 3
+       }
        .selecter.open .selecter-selected {
-         border-radius: 3px 3px 0 0;
          z-index: 51;
        }
        .selecter.open .selecter-selected,
        .selecter.focus .selecter-selected {
-         background-color: $mid-green;
-         //box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+         //background-color: darken($teal,10%);
        }
        /* 'Cover' Positioning */
        .selecter.cover .selecter-options {

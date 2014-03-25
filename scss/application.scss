@@ -10,7 +10,6 @@ $ie : false !default;
 @import 'selecter';
 
 
-$placeholderColor: darken($mid-green, 6%);
 
 ::-webkit-input-placeholder {
   color: $placeholderColor;
@@ -39,10 +38,6 @@ body {
 
 }
 
-.center {
-  text-align: center;
-}
-
 header {
   margin-bottom: 4em;
 }
@@ -58,6 +53,7 @@ header {
   padding-top: 10%;
   text-indent: 100%;
   white-space: nowrap;
+  opacity: 0;
 }
 
 // <div> main container
@@ -71,20 +67,23 @@ header {
 
 // contains one form row
 .newPost__group {
-  margin-bottom: 1em;
+  margin-bottom: 26px;
 }
 
 // contains a half row
 .newPost__group--inline {
+  @extend .newPost__group;
   display: inline-block;
-  width: 49%;
+  margin-right: 1%;
+  vertical-align: top;
+  width: 31%;
 
-  &:first-child {
-    margin-right: 1%;
+  &:last-of-type {
+    margin-right: 0;
   }
 
   .selecter {
-    max-width: 100px;
+    max-width: 110px;
   }
 }
 
@@ -198,9 +197,10 @@ $spacing: 6px;
   background-color: $teal;
   border: none;
   color: $dark-green;
-  @include rem('font-size',28px);
+  @include rem('font-size',32px);
   font-weight: 600;
-  padding: .6em 1.4em;
+  letter-spacing: 1px;
+  padding: .6em 1.8em;
   text-transform: uppercase;
 }
 
@@ -215,6 +215,12 @@ $spacing: 6px;
   margin-top: 1em;
 }
 
+
+.cta {
+  margin-bottom: 0;
+  margin-top: 3em;
+  text-align: center;
+}
 
 
 

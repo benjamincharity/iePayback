@@ -1,9 +1,9 @@
 angular.module('iePayback').directive('selecter', function($timeout) {
 
   var linkFunction = function($scope, $element, $attributes) {
-    $timeout(function() {
+    $timeout(function(label) {
       $element.selecter({
-        //label: defaultLabel
+        label: $attributes.label
       });
     }, 50);
   };
@@ -11,7 +11,7 @@ angular.module('iePayback').directive('selecter', function($timeout) {
   return {
     restrict: 'A',
     scope: {
-      defaultLabel: '=label'
+      label: '='
     },
     link: linkFunction
   };

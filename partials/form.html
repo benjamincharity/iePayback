@@ -6,7 +6,6 @@
       type="text"
       data-ng-model="newPostForm.name"
       class="newPost__input"
-      placeholder="e.g. Benjamin..."
     />
   </div>
 
@@ -16,7 +15,7 @@
     <select
       data-ng-model="newPostForm.lastInitial"
       selecter
-      label="foo"
+      label="[select]"
     >
       <option value="{{ letter }}" data-ng-repeat="letter in alphabet">{{ letter }}</option>
     </select>
@@ -24,12 +23,12 @@
 
 
   <div class="newPost__group--inline">
-    <label class="newPost__label">Years Spent In Suffering</label>
+    <label class="newPost__label">Years Suffered</label>
     <select
       class="years"
       data-ng-model="newPostForm.years"
       selecter
-      label="bar"
+      label="[select]"
     >
     <option
       value="{{ year }}"
@@ -40,9 +39,18 @@
     </select>
   </div>
 
+  <div class="newPost__group--inline">
+    <label class="newPost__label">$/hour</label>
+    <input
+      type="text"
+      data-ng-model="newPostForm.rate"
+      class="newPost__input"
+    />
+  </div>
+
 
   <div class="newPost__group">
-    <p class="newPost__label">Versions subjected to</p>
+    <p class="newPost__label">IE Versions subjected to</p>
 
     <ul class="newPost__versions">
 
@@ -129,7 +137,7 @@
     </ul>
   </div>
 
-  <div class="newPost__group  center">
+  <div class="newPost__group  cta">
     <button class="newPost__submit" ng-click="submit(newPostForm)">Submit</button>
 
     <div>
