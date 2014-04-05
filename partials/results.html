@@ -1,28 +1,28 @@
 <div class="inner-container">
   <article class="check" data-ng-repeat="post in posts">
 
-  <div class="check__aspectRatio"></div>
+    <div class="check__aspectRatio"></div>
 
-  <ul class="check__address">
-    <li class="check__address-item">Microsoft Corporation</li>
-    <li>One Microsoft Way</li>
-    <li>Redmond, WA 98052-7329</li>
-  </ul>
+    <ul class="check__address">
+      <li class="check__address-item">Microsoft Corporation</li>
+      <li>One Microsoft Way</li>
+      <li>Redmond, WA 98052-7329</li>
+    </ul>
 
-  <span class="check__number">{{ $index +  1000 }}</span>
+    <span class="check__number">{{ $index +  1000 }}</span>
 
-  <span class="check__date">{{ currentDate }}</span>
+    <span class="check__date">{{ currentDate }}</span>
 
-  <h1 class="check__name" data-ng-if="post.name">
-    {{ post.name }} 
-    <span data-ng-if="post.lastInitial">{{ post.lastInitial }}.</span>
-  </h1>
+    <h1 class="check__name" data-ng-if="post.name">
+      {{ post.name }} 
+      <span data-ng-if="post.lastInitial">{{ post.lastInitial }}.</span>
+    </h1>
 
-  <div class="check__amount">$45,555{{ post.cost }}</div>
+    <div class="check__amount">$45,555{{ post.cost }}</div>
 
-  <div class="check__memo">Gross negligence resulting in {{ post.years }} years of {{ post.frustrationLevel }} work</div>
+    <div class="check__memo">Gross negligence resulting in {{ post.years }} years of {{ post.frustrationLevel }} work</div>
 
-  <div class="check__signature">Microsoft Inc.</div>
+    <div class="check__signature">Microsoft Inc.</div>
 
   </article>
 </div>
