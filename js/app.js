@@ -17,6 +17,5 @@ angular.module('iePayback').run(function($rootScope, fbService) {
 
   // on app init, go get all existing posts
   $rootScope.posts = fbService;
-  
 
 });
