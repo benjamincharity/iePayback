@@ -4,10 +4,10 @@ Your title: Benjamin Charity
 Site: http://benjamincharity.com
 Twitter: @benjamincharity
 Location: Atlanta, USA.
-						
-                            
+
+
 /* SITE */
-                            
+
 Last update: 2014/04/07 
 Standards: HTML5, CSS3
 Components: Modernizr, jQuery, Formstone.Selecter, Angular, AngularFire, AngularUIRouter,
@@ -20,7 +20,8 @@ and viola...you have this site.
 
 Now the numbers... the numbers are completely bogus. I simply assigned ratios
 to various version of IE based on how much a developer might pad his hours to
-cover the support.
+cover the support of that version. This increase is added together for each
+version selected.
 
 If anyone has any clever ideas on how we could make the math a bit more
 accurate, I am all ears.
