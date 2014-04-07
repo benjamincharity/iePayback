@@ -26,3 +26,4 @@ version selected.
 If anyone has any clever ideas on how we could make the math a bit more
 accurate, I am all ears.
 
+Also...I wanted to see if I could design an entire site using only one color...
