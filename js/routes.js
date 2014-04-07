@@ -37,7 +37,7 @@ angular.module('iePayback').config(function($stateProvider, $urlRouterProvider) 
     .state('form', {
         url: "/",
         templateUrl: "partials/form.html",
-        controller: 'FormCtrl'
+        controller: 'PostCtrl'
     })
     .state('results', {
         url: "/results/",

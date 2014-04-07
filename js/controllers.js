@@ -3,12 +3,22 @@
 
 
 
-  angular.module('iePayback').controller('FormCtrl', function ($rootScope, $scope, $firebase, $state, $timeout) {
+  angular.module('iePayback').controller('PostCtrl', function ($rootScope, $scope, $firebase, $state, $timeout) {
 
     $scope.alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
+    function range(start, end) {
+      var myRange = [];
+      for (var i = start; i <= end; i++) {
+        myRange.push(i);
+      }
+      return myRange;
+    }
+
     // current year - 1995 when IE 5 was released
-    $scope.yearsSinceRelease = new Date().getFullYear() - 1995;
+    var dateSinceRelease = new Date().getFullYear() - 1995;
+
+    $scope.yearsSinceRelease = range(1, dateSinceRelease);
 
 
     //
@@ -86,7 +96,6 @@
 
     // determine the IE dev cost
     $scope.updateCost = function() {
-
       var billableHoursPerYear = 1650; // http://bnj.bz/0L2n1e1I1W36
       var hours = $scope.newPostForm.years * billableHoursPerYear;
       var ieHours = calculateLostHours($scope.newPostForm.ieVersions, hours);
@@ -96,6 +105,18 @@
 
     };
 
+    $scope.$watch('newPostForm.years', function(newValue, oldValue) {
+
+      $timeout(function() {
+
+        $scope.$apply(function () {
+          $scope.updateCost();
+        });
+
+      });
+
+    });
+
 
     // our object to store form data until saving
     $scope.newPostForm = {};
@@ -104,12 +125,14 @@
     $scope.newPostForm.totalCost = 0;
 
     $scope.newPostForm.rate = '';
+    $scope.newPostForm.years = 0;
 
     // create our new post object that we will send to firebase
     $scope.newPost = {};
 
 
     $scope.submit = function(newPost) {
+      console.log(newPost);
 
       // pass our form object into firebase
       $rootScope.posts.$add(newPost);
@@ -123,10 +146,33 @@
 
     // callback function for custom dropdown.
     //
-    $scope.newPostForm.setSelectedItem = function(value, index) {
+    $scope.newPostForm.setSelectedInitial = function(value, index) {
+
       $timeout(function() {
-        $scope.newPostForm.years = index;
+
+        $scope.$apply(function () {
+          $scope.newPostForm.lastInitial = $scope.alphabet[index-1];
+        });
+
       });
+
+    };
+
+    $scope.newPostForm.setSelectedYear = function(value, index) {
+
+      $timeout(function() {
+
+        $scope.$apply(function () {
+          if( isNaN(value) ) {
+            $scope.newPostForm.years = value;
+          } else {
+            $scope.newPostForm.years = parseInt(value);
+          }
+
+        });
+
+      });
+
     };
 
   });

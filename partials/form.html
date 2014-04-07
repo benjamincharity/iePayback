@@ -2,7 +2,7 @@
   {{ newPostForm.totalCost | noFractionCurrency }}
 </div>
 
-<div class="inner-container">
+<div class="inner-container  newPost-container">
 
   <form novalidate class="newPost">
 
@@ -20,11 +20,15 @@
       <label class="newPost__label">Last Initial</label>
       <select
         data-ng-model="newPostForm.lastInitial"
-        selecter
-        label="[select]"
+        id="initials"
         >
         <option
           data-ng-repeat="letter in alphabet"
+          selecter-for-option-with-ng-repeat
+          selecter-target="#initials"
+          selecter-callback="newPostForm.setSelectedInitial"
+          selecter-class="js_numbers"
+          selecter-label="[select]"
         >{{ letter }}</option>
       </select>
     </div>
@@ -36,14 +40,14 @@
         class="years"
         id="ieYears"
         data-ng-model="newPostForm.years"
-        selecter
-        label="[select]"
         >
           <option
-            data-ng-repeat="year in [1,2,3,4,5,6,7,8]"
+            data-ng-repeat="year in yearsSinceRelease"
             selecter-for-option-with-ng-repeat
             selecter-target="#ieYears"
-            selecter-callback="newPostForm.setSelectedItem"
+            selecter-callback="newPostForm.setSelectedYear"
+            selecter-class="js_numbers"
+            selecter-label="[select]"
           >
             {{ year }}
           </option>
@@ -53,11 +57,12 @@
     <div class="newPost__group--inline  rate">
       <label class="newPost__label">$/hour</label>
       <input
-        type="text"
+        type="tel"
         id="hourlyRate"
         data-ng-model="newPostForm.rate"
         data-ng-change="updateCost()"
         class="newPost__input"
+        verify-numeric
       />
     </div>
 

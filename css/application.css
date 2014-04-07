@@ -228,10 +228,12 @@ li {
   list-style-type: none;
 }
 
-/* line 14, ../scss/_extends.scss */
+/* line 15, ../scss/_extends.scss */
 .selecter, .newPost__input {
   background: transparent;
   border: 4px solid #176437;
+  border-radius: 0;
+  box-shadow: none;
   color: #176437;
   display: block;
   font-size: 28px;
@@ -240,7 +242,7 @@ li {
   padding: .4em .4em .3em;
   text-transform: uppercase;
 }
-/* line 24, ../scss/_extends.scss */
+/* line 27, ../scss/_extends.scss */
 .selecter:focus, .newPost__input:focus {
   outline: 0;
 }
@@ -524,13 +526,14 @@ html {
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 600;
-  padding: 2em;
+  padding: 1em;
   text-transform: uppercase;
 }
-
-/* line 37, ../scss/application.scss */
-header {
-  margin-bottom: 5em;
+@media (min-width: 430px) {
+  /* line 27, ../scss/application.scss */
+  html {
+    padding: 2em;
+  }
 }
 
 /* line 42, ../scss/application.scss */
@@ -550,7 +553,7 @@ header {
 .container {
   margin: 0 auto;
   max-width: 540px;
-  min-width: 250px;
+  min-width: 300px;
   position: relative;
 }
 
@@ -558,17 +561,23 @@ header {
 .inner-container {
   background: #229652;
   border: 1px solid #176437;
+  margin-top: 1em;
   padding: 12px;
   position: relative;
+}
+/* line 71, ../scss/application.scss */
+.inner-container.newPost-container {
+  margin-top: 5em;
 }
 @media (min-width: 560px) {
   /* line 63, ../scss/application.scss */
   .inner-container {
+    margin-top: 2em;
     padding: 30px;
   }
 }
 
-/* line 76, ../scss/application.scss */
+/* line 82, ../scss/application.scss */
 .cost {
   position: absolute;
   top: 0;
@@ -592,71 +601,71 @@ header {
   transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
 @media (min-width: 560px) {
-  /* line 76, ../scss/application.scss */
+  /* line 82, ../scss/application.scss */
   .cost {
     width: 40%;
   }
 }
 
-/* line 97, ../scss/application.scss */
+/* line 103, ../scss/application.scss */
 .newPost__group, .newPost__group--inline {
   margin-bottom: 26px;
 }
 
-/* line 102, ../scss/application.scss */
+/* line 108, ../scss/application.scss */
 .newPost__group--inline {
   display: inline-block;
   vertical-align: top;
   width: 100%;
 }
-/* line 108, ../scss/application.scss */
+/* line 114, ../scss/application.scss */
 .newPost__group--inline .selecter {
   max-width: 130px;
 }
 @media (min-width: 430px) {
-  /* line 102, ../scss/application.scss */
+  /* line 108, ../scss/application.scss */
   .newPost__group--inline {
     margin-right: 1%;
     width: 48%;
   }
-  /* line 116, ../scss/application.scss */
+  /* line 122, ../scss/application.scss */
   .newPost__group--inline.rate {
     margin-right: 0;
     width: 100%;
   }
 }
 @media (min-width: 560px) {
-  /* line 102, ../scss/application.scss */
+  /* line 108, ../scss/application.scss */
   .newPost__group--inline {
     width: 31%;
   }
-  /* line 125, ../scss/application.scss */
+  /* line 131, ../scss/application.scss */
   .newPost__group--inline.rate {
     margin-right: 0;
     width: 31%;
   }
-  /* line 130, ../scss/application.scss */
+  /* line 136, ../scss/application.scss */
   .newPost__group--inline .selecter {
     max-width: auto;
   }
 }
 
-/* line 137, ../scss/application.scss */
+/* line 143, ../scss/application.scss */
 .newPost__label {
   margin-bottom: 0;
 }
-/* line 140, ../scss/application.scss */
+/* line 146, ../scss/application.scss */
 .newPost__label::after {
   content: ":";
 }
 
-/* line 146, ../scss/application.scss */
+/* line 152, ../scss/application.scss */
 .newPost__input {
   height: 54px;
   width: 100%;
 }
 
-/* line 153, ../scss/application.scss */
+/* line 159, ../scss/application.scss */
 .newPost__versions {
   margin-left: -6px;
 }
@@ -667,7 +676,7 @@ header {
   display: table;
 }
 
-/* line 160, ../scss/application.scss */
+/* line 166, ../scss/application.scss */
 .newPost__version {
   float: left;
   overflow: hidden;
@@ -675,26 +684,26 @@ header {
   white-space: nowrap;
   width: 50%;
 }
-/* line 168, ../scss/application.scss */
+/* line 174, ../scss/application.scss */
 .newPost__version::before {
   content: "";
   display: block;
   padding-top: 120%;
 }
 @media (min-width: 430px) {
-  /* line 160, ../scss/application.scss */
+  /* line 166, ../scss/application.scss */
   .newPost__version {
     width: 33%;
   }
 }
 @media (min-width: 560px) {
-  /* line 160, ../scss/application.scss */
+  /* line 166, ../scss/application.scss */
   .newPost__version {
     width: 25%;
   }
 }
 
-/* line 188, ../scss/application.scss */
+/* line 194, ../scss/application.scss */
 .newPost__version-label {
   background-size: 60%;
   background-repeat: no-repeat;
@@ -716,35 +725,35 @@ header {
   -o-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
-/* line 204, ../scss/application.scss */
+/* line 210, ../scss/application.scss */
 .newPost__version-label[for=ie5] {
   background-image: url("/images/ie5.svg");
 }
-/* line 208, ../scss/application.scss */
+/* line 214, ../scss/application.scss */
 .newPost__version-label[for=ie6] {
   background-image: url("/images/ie6.svg");
 }
-/* line 212, ../scss/application.scss */
+/* line 218, ../scss/application.scss */
 .newPost__version-label[for=ie7] {
   background-image: url("/images/ie7.svg");
 }
-/* line 216, ../scss/application.scss */
+/* line 222, ../scss/application.scss */
 .newPost__version-label[for=ie8] {
   background-image: url("/images/ie8.svg");
 }
-/* line 220, ../scss/application.scss */
+/* line 226, ../scss/application.scss */
 .newPost__version-label[for=ie9] {
   background-image: url("/images/ie9.svg");
 }
-/* line 224, ../scss/application.scss */
+/* line 230, ../scss/application.scss */
 .newPost__version-label[for=ie10] {
   background-image: url("/images/ie10.svg");
 }
-/* line 228, ../scss/application.scss */
+/* line 234, ../scss/application.scss */
 .newPost__version-label[for=ie11] {
   background-image: url("/images/ie11.svg");
 }
-/* line 232, ../scss/application.scss */
+/* line 238, ../scss/application.scss */
 .newPost__version-label[for=ieCompatability] {
   background-image: url("/images/ieCompatability.svg");
   font-size: 14px;
@@ -753,19 +762,19 @@ header {
   white-space: normal;
 }
 
-/* line 241, ../scss/application.scss */
+/* line 247, ../scss/application.scss */
 .newPost__version-checkbox {
   opacity: 0;
   pointer-events: none;
   position: absolute;
   right: 100%;
 }
-/* line 248, ../scss/application.scss */
+/* line 254, ../scss/application.scss */
 .newPost__version-checkbox:checked + label {
   border-color: #176437;
 }
 
-/* line 255, ../scss/application.scss */
+/* line 261, ../scss/application.scss */
 .newPost__submit {
   background-color: #52cf86;
   border: none;
@@ -782,13 +791,13 @@ header {
   -o-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
-/* line 266, ../scss/application.scss */
+/* line 272, ../scss/application.scss */
 .newPost__submit:focus, .newPost__submit:hover {
   outline: 0;
   background-color: #82dca8;
 }
 
-/* line 277, ../scss/application.scss */
+/* line 283, ../scss/application.scss */
 .newPost__skip {
   color: #176437;
   display: inline-block;
@@ -800,33 +809,40 @@ header {
   margin-top: 1em;
 }
 
-/* line 288, ../scss/application.scss */
+/* line 294, ../scss/application.scss */
 .cta {
   margin-bottom: 0;
   margin-top: 3em;
   text-align: center;
 }
 
-/* line 314, ../scss/application.scss */
+/* line 320, ../scss/application.scss */
 .check {
   background-color: #e4e4e4;
   border: 1px solid #176437;
   color: #222;
   font-size: 11px;
   margin-bottom: 3em;
+  min-height: 115px;
   position: relative;
 }
-/* line 322, ../scss/application.scss */
+/* line 329, ../scss/application.scss */
 .check:last-of-type {
   margin-bottom: 0;
 }
 
-/* line 328, ../scss/application.scss */
+/* line 335, ../scss/application.scss */
 .check__aspectRatio {
-  padding-top: 34%;
+  padding-top: 44%;
+}
+@media (min-width: 500px) {
+  /* line 335, ../scss/application.scss */
+  .check__aspectRatio {
+    padding-top: 34%;
+  }
 }
 
-/* line 333, ../scss/application.scss */
+/* line 344, ../scss/application.scss */
 .check__address {
   font-size: 9px;
   font-weight: 400;
@@ -835,7 +851,7 @@ header {
   top: 1em;
 }
 
-/* line 342, ../scss/application.scss */
+/* line 353, ../scss/application.scss */
 .check__number {
   font-size: 16px;
   opacity: .7;
@@ -844,41 +860,63 @@ header {
   top: 10px;
 }
 
-/* line 351, ../scss/application.scss */
+/* line 362, ../scss/application.scss */
 .check__date {
   border-bottom: 1px solid #176437;
   font-size: 9px;
   font-weight: 400;
   position: absolute;
-  right: 60px;
-  top: 15px;
+  right: 10px;
+  top: 30px;
+}
+@media (min-width: 500px) {
+  /* line 362, ../scss/application.scss */
+  .check__date {
+    right: 60px;
+    top: 15px;
+  }
 }
 
-/* line 361, ../scss/application.scss */
+/* line 377, ../scss/application.scss */
 .check__name {
   border-bottom: 1px solid #176437;
   font-size: 16px;
   line-height: 1em;
   position: absolute;
-  left: 54px;
+  left: 10px;
   top: 64px;
-  width: 56%;
+  width: 40%;
 }
-/* line 370, ../scss/application.scss */
+/* line 386, ../scss/application.scss */
 .check__name::before {
   content: "Pay to the Order of";
   font-size: 7px;
   height: 100%;
   line-height: 7px;
+  opacity: .5;
   position: absolute;
-  top: 3px;
-  left: -44px;
-  width: 40px;
+  top: -8px;
+  left: 0px;
+  width: auto;
   display: inline-block;
   text-align: right;
 }
+@media (min-width: 500px) {
+  /* line 377, ../scss/application.scss */
+  .check__name {
+    left: 54px;
+    width: 46%;
+  }
+  /* line 404, ../scss/application.scss */
+  .check__name::before {
+    opacity: 1;
+    top: 3px;
+    left: -44px;
+    width: 40px;
+  }
+}
 
-/* line 385, ../scss/application.scss */
+/* line 414, ../scss/application.scss */
 .check__amount {
   background-color: #cbcbcb;
   font-size: 16px;
@@ -887,12 +925,19 @@ header {
   position: absolute;
   right: 10px;
   top: 55px;
-  width: 20%;
+  width: 40%;
+}
+@media (min-width: 500px) {
+  /* line 414, ../scss/application.scss */
+  .check__amount {
+    width: 26%;
+  }
 }
 
-/* line 397, ../scss/application.scss */
+/* line 430, ../scss/application.scss */
 .check__memo {
   border-bottom: 1px solid #176437;
+  font-size: 7px;
   font-weight: 400;
   position: absolute;
   left: 10px;
@@ -900,12 +945,25 @@ header {
   text-transform: none;
   width: 58%;
 }
+@media (min-width: 500px) {
+  /* line 430, ../scss/application.scss */
+  .check__memo {
+    font-size: inherit;
+  }
+}
 
-/* line 408, ../scss/application.scss */
+/* line 446, ../scss/application.scss */
 .check__signature {
   border-bottom: 1px solid #176437;
+  font-size: 8px;
   position: absolute;
   right: 10px;
   bottom: 10px;
   width: 30%;
+}
+@media (min-width: 500px) {
+  /* line 446, ../scss/application.scss */
+  .check__signature {
+    font-size: inherit;
+  }
 }

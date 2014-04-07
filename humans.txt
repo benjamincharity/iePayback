@@ -1,0 +1,27 @@
+/* TEAM */
+
+Your title: Benjamin Charity
+Site: http://benjamincharity.com
+Twitter: @benjamincharity
+Location: Atlanta, USA.
+						
+                            
+/* SITE */
+                            
+Last update: 2014/04/07 
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery, Formstone.Selecter, Angular, AngularFire, AngularUIRouter,
+Software: MacVim, Transmit, iTerm2
+
+About: A boss of mine once mentioned how he wished he could invoice Microsoft
+for all the hours he has paid developers to deal with Internet Explorer. Combine
+the idea with the fact that all developers have a deep need to bitch about IE,
+and viola...you have this site.
+
+Now the numbers... the numbers are completely bogus. I simply assigned ratios
+to various version of IE based on how much a developer might pad his hours to
+cover the support.
+
+If anyone has any clever ideas on how we could make the math a bit more
+accurate, I am all ears.
+

@@ -1,5 +1,5 @@
 <div class="inner-container">
-  <article class="check" data-ng-repeat="post in posts">
+  <article class="check" data-ng-repeat="post in posts | orderByPriority | reverse">
 
     <div class="check__aspectRatio"></div>
 
@@ -13,12 +13,12 @@
 
     <span class="check__date">{{ currentDate }}</span>
 
-    <h1 class="check__name" data-ng-if="post.name">
-      {{ post.name }} 
+    <h1 class="check__name">
+      {{ post.name || "&nbsp;"}} 
       <span data-ng-if="post.lastInitial">{{ post.lastInitial }}.</span>
     </h1>
 
-    <div class="check__amount">$45,555{{ post.cost }}</div>
+    <div class="check__amount">{{ post.totalCost | noFractionCurrency }}</div>
 
     <div class="check__memo">Gross negligence resulting in {{ post.years }} years of {{ post.frustrationLevel }} work</div>
 

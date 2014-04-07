@@ -9,11 +9,14 @@ $placeholderColor : darken($mid-green, 6%);
 
 $break1: 430px;
 $break2: 560px;
+$checkBreak: 500px;
 
 
 %inputStyle {
   background: transparent;
   border: 4px solid $dark-green;
+  border-radius: 0;
+  box-shadow: none;
   color: $dark-green;
   display: block;
   @include rem('font-size',28px);
