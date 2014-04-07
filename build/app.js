@@ -181,6 +181,18 @@ angular.module('iePayback').config(function($stateProvider, $urlRouterProvider) 
 
     $scope.yearsSinceRelease = range(1, dateSinceRelease);
 
+    // our object to store form data until saving
+    $scope.newPostForm = {};
+
+    // give a starting integer so that our filter doesn't choke
+    $scope.newPostForm.totalCost = 0;
+
+    $scope.newPostForm.rate = '';
+    $scope.newPostForm.years = 0;
+    $scope.newPostForm.lostHours = 0;
+
+    // create our new post object that we will send to firebase
+    $scope.newPost = {};
 
     //
     // Function to calculate how many *extra* hours were spent supporting IE
@@ -247,8 +259,13 @@ angular.module('iePayback').config(function($stateProvider, $urlRouterProvider) 
             break;
         }
 
+        // let's work with a nice round number
+        lostHours = Math.round(lostHours);
+
       });
 
+      var hoursString = lostHours.toString();
+      $scope.newPostForm.lostHoursFriendly = hoursString.substring(0, hoursString.length - 3) + 'k+';
       // round our final number and return
       return Math.round(lostHours);
 
@@ -278,18 +295,6 @@ angular.module('iePayback').config(function($stateProvider, $urlRouterProvider) 
 
     });
 
-
-    // our object to store form data until saving
-    $scope.newPostForm = {};
-
-    // give a starting integer so that our filter doesn't choke
-    $scope.newPostForm.totalCost = 0;
-
-    $scope.newPostForm.rate = '';
-    $scope.newPostForm.years = 0;
-
-    // create our new post object that we will send to firebase
-    $scope.newPost = {};
 
 
     $scope.submit = function(newPost) {
@@ -354,6 +359,7 @@ angular.module('iePayback').config(function($stateProvider, $urlRouterProvider) 
   });
 
 }()); // end strict function
+
 angular.module('iePayback').directive('selecter', function($timeout) {
 
   var linkFunction = function($scope, $element, $attributes) {

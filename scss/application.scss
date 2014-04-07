@@ -455,3 +455,20 @@ $bottomMargin: 10px;
     font-size: inherit;
   }
 }
+
+
+
+footer {
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: .6;
+  padding-top: 2em;
+  text-align: center;
+  @include customTransition(opacity);
+
+  a {
+    color: $dark-green;
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
