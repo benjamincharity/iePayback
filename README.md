@@ -1,6 +1,6 @@
 # IE Payback
 
-https://sweltering-fire-2791.firebaseio.com/
+A 'for fun' web app to let developers proclaim how much money has been wasted supporting IE during their career.
 
 
 
